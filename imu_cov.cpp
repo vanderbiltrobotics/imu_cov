@@ -2,14 +2,19 @@ extern "C" {
 	#include <roboticscape.h>
 	#include <rc_usefulincludes.h>
 }
-#include "./src/imu/src/imu/FreeSixIMU.cpp"
+#include "FreeSixIMU.h"
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
 
 int main() {
-
+    // start roboticscape
     rc_initialize();
+    // start i2c with the target register pointed to nothing
+    // (this is important because FreeSixIMU assumes that the i2c port has 
+    //  already been initialized)
+    rc_i2c_init(1, 0x00);
+
     FreeSixIMU imu;
     std::cout << "TEST" << std::endl;
     imu.init();
@@ -21,7 +26,7 @@ int main() {
     {
         imu.getQ(orient_arr);
         data_file << orient_arr[0] << "," << orient_arr[1] << "," << orient_arr[2] << "," << orient_arr[3] << std::endl;
-        usleep(10);
+        usleep(1000);
     }
     data_file.close();
 
