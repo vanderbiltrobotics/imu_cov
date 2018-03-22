@@ -15,7 +15,7 @@ extern "C" {
   #include <rc_usefulincludes.h>
 }
 
-#include "imu/ITG3200.h"
+#include "ITG3200.h"
 // everything is already in the same file
 
 ITG3200::ITG3200() {

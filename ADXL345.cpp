@@ -15,7 +15,7 @@ extern "C" {
   #include <rc_usefulincludes.h>
 }
 
-#include "imu/ADXL345.h"
+#include "ADXL345.h"
 
 ADXL345::ADXL345() {
   status = ADXL345_OK;

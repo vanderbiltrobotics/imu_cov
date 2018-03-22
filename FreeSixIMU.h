@@ -28,8 +28,8 @@
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 #endif*/
 
-#include "imu/ADXL345.h"
-#include "imu/ITG3200.h"
+#include "ADXL345.h"
+#include "ITG3200.h"
 
 typedef uint8_t byte;
 

@@ -1,3 +1,4 @@
+
 extern "C" {
     #include <roboticscape.h>
     #include <rc_usefulincludes.h>
@@ -20,18 +21,16 @@ int main() {
 //    std::cout << "TEST" << std::endl;
     imu.init();
    // std::cout << "TEST" << std::endl;
-    float orient_arr[4];
+    float accel_gyro_vals[6];
     std::ofstream data_file;
     data_file.open("data.txt");
     for (size_t i = 0; i < 10000; i++)
     {
-        imu.getQ(orient_arr);
-        data_file << orient_arr[0] << "," << orient_arr[1] << "," << orient_arr[2] << "," << orient_arr[3] << "\n";
-       	usleep(10000);
+        imu.getValues(accel_gyro_vals);
+        data_file << accel_gyro_vals[0] << "," << accel_gyro_vals[1] << "," << accel_gyro_vals[2] << "\n";
+        usleep(10000);
     }
     data_file.close();
 
     return 0;
 }
-
-
