@@ -68,18 +68,30 @@ void covCalculator(double inputMat[3][9]) {
 
     //double covMats[3][9];
 
-    double covMats0[] = {orient_cov_mat(0),orient_cov_mat(1),orient_cov_mat(2),
-                  orient_cov_mat(3),orient_cov_mat(4),orient_cov_mat(5),
-                  orient_cov_mat(6),orient_cov_mat(7),orient_cov_mat(8)};
+    //double covMats0[] = {orient_cov_mat(0),orient_cov_mat(1),orient_cov_mat(2),
+    //                     orient_cov_mat(3),orient_cov_mat(4),orient_cov_mat(5),
+    //                     orient_cov_mat(6),orient_cov_mat(7),orient_cov_mat(8)};
 
-    double covMats1[] = {lin_accel_cov_mat(0),lin_accel_cov_mat(1),lin_accel_cov_mat(2),
-                  lin_accel_cov_mat(3),lin_accel_cov_mat(4),lin_accel_cov_mat(5),
-                  lin_accel_cov_mat(6),lin_accel_cov_mat(7),lin_accel_cov_mat(8)};
+    //double covMats1[] = {lin_accel_cov_mat(0),lin_accel_cov_mat(1),lin_accel_cov_mat(2),
+    //                     lin_accel_cov_mat(3),lin_accel_cov_mat(4),lin_accel_cov_mat(5),
+    //                     lin_accel_cov_mat(6),lin_accel_cov_mat(7),lin_accel_cov_mat(8)};
 
-    double covMats2[] = {ang_vel_cov_mat(0),ang_vel_cov_mat(1),ang_vel_cov_mat(2),
-                  ang_vel_cov_mat(3),ang_vel_cov_mat(4),ang_vel_cov_mat(5),
-                  ang_vel_cov_mat(6),ang_vel_cov_mat(7),ang_vel_cov_mat(8)};
-    double covMats[3][9] = {covMats0, covMats1, covMats2};
+    //double covMats2[] = {ang_vel_cov_mat(0),ang_vel_cov_mat(1),ang_vel_cov_mat(2),
+    //                     ang_vel_cov_mat(3),ang_vel_cov_mat(4),ang_vel_cov_mat(5),
+    //                     ang_vel_cov_mat(6),ang_vel_cov_mat(7),ang_vel_cov_mat(8)};
+
+    double covMats[3][9] = {
+                            {orient_cov_mat(0),orient_cov_mat(1),orient_cov_mat(2),
+                             orient_cov_mat(3),orient_cov_mat(4),orient_cov_mat(5),
+                             orient_cov_mat(6),orient_cov_mat(7),orient_cov_mat(8)},
+                            {lin_accel_cov_mat(0),lin_accel_cov_mat(1),lin_accel_cov_mat(2),
+                             lin_accel_cov_mat(3),lin_accel_cov_mat(4),lin_accel_cov_mat(5),
+                             lin_accel_cov_mat(6),lin_accel_cov_mat(7),lin_accel_cov_mat(8)},
+                            {ang_vel_cov_mat(0),ang_vel_cov_mat(1),ang_vel_cov_mat(2),
+                             ang_vel_cov_mat(3),ang_vel_cov_mat(4),ang_vel_cov_mat(5),
+                             ang_vel_cov_mat(6),ang_vel_cov_mat(7),ang_vel_cov_mat(8)}
+                           };
+
     //covMats[0] = covMats0;
     //covMats[1] = covMats1;
     //covMats[2] = covMats2;
